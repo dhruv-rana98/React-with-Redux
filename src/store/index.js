@@ -1,19 +1,29 @@
 // const redux = require("redux"); //way to import in node.js application
 import { createStore } from "redux";
-const counterReduxer = (state = { counter: 0 }, action) => {
+const initialState = { counter: 0, showCounter: true };
+const counterReduxer = (state = initialState, action) => {
   if (action.type === "increment") {
     return {
       counter: state.counter + 1,
+      showCounter: state.showCounter,
     };
   }
   if (action.type === "increase") {
     return {
       counter: state.counter + action.amount,
+      showCounter: state.showCounter,
     };
   }
   if (action.type === "decrement") {
     return {
       counter: state.counter - 1,
+      showCounter: state.showCounter,
+    };
+  }
+  if (action.type === "toggle") {
+    return {
+      counter: state.counter,
+      showCounter: !state.showCounter,
     };
   }
   return state;
