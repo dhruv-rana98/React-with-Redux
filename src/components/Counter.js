@@ -4,8 +4,8 @@ import { counterActions } from "../store/index";
 
 const Counter = () => {
   const dispatch = useDispatch(); //create a dispatch fucntion using useDispatch to dispacth action
-  const counter = useSelector((state) => state.counter); //redux state value fetched using a function to output value from the redux store
-  const showCounter = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter); //redux state value fetched using a function to output value from the redux store
+  const showCounter = useSelector((state) => state.counter.showCounter);
 
   const incrementHandler = () => {
     dispatch(counterActions.increment());
